@@ -1,0 +1,18 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.All {
+  width: 1.188rem;
+  height: 1.75rem;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--azure);
+}

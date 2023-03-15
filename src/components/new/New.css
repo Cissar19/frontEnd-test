@@ -1,0 +1,51 @@
+.Rectangle {
+  width: 34.375rem;
+  height: 5.625rem;
+  padding: 0 0 0 1.625rem;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  align-content: center;
+}
+.Rectangle-heart {
+  width: 4.25rem;
+  height: 5.625rem;
+  margin: 0 0 0 1rem;
+  padding: 2.188rem 1.375rem 2.063rem;
+
+  border-radius: 6px;
+  border: solid 1px #606060;
+  background-color: #ff0000;
+}
+.Realize-for-React-fo {
+  width: 27.5rem;
+  height: 2.5rem;
+  margin: 2.25rem 1rem 0.875rem 0;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: #606060;
+}
+
+.-hours-ago-by-autho {
+  width: 6.688rem;
+  height: 0.813rem;
+  margin: 1rem 20.313rem 0.438rem 0.5rem;
+  font-family: Roboto;
+  font-size: 0.688rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+}
+
+.a {
+  background-color: red;
+}

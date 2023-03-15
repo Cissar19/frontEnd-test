@@ -1,0 +1,19 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: center;
+  grid-gap: 20px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 4 / 3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
