@@ -1,18 +1,24 @@
 .buttonContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 63px;
 }
 
-.All {
-  width: 1.188rem;
-  height: 1.75rem;
+.btn {
+  all: unset;
+  width: 98px;
+  transition: 0.3s;
   font-family: Roboto;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.75;
-  letter-spacing: normal;
   text-align: center;
-  color: var(--azure);
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  border: solid #d6d6d6;
+  color: #1797ff;
 }
