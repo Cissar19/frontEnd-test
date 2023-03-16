@@ -20,3 +20,21 @@
   letter-spacing: normal;
   color: #3b3b3b;
 }
+
+@media (max-width: 768px) {
+  .Rectangle-2-Copy {
+    width: 100%;
+    height: auto;
+    margin: 0 0 4.375rem;
+    padding: 2.75rem 27.625rem 2.625rem 5.375rem;
+    box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+    background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  }
+  .HACKER-NEWS {
+    width: 3rem;
+    height: 0.75rem;
+    object-fit: contain;
+    font-family: Baskerville;
+    font-size: 1.75rem;
+  }
+}

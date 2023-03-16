@@ -5,62 +5,59 @@ import "./NewsListContainer.css";
 
 export default function NewsListContainer() {
   const [newList, setNewList] = useState([]);
-  const [query, setQuery] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
-  const [pages, setPages] = useState(0);
+  const DEFAULT_PAGE = 1;
 
-  async function getNews() {
+  async function callNews(pages, query) {
     let respuesta = await fetch(
       `https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${pages}&hitsPerPage=8`
     );
     let news = await respuesta.json();
-    setNewList(news.hits);
-    setTotalPages(news.nbPages);
-    setQuery(news.query);
-    console.log(news);
-    console.log(newList);
+    setNewList(news);
   }
 
-  const handleChange = (e, p) => {
-    setPages(p);
+  const handleChangePagination = (e_, numberPage) => {
+    callNews(numberPage);
   };
-  const handleChangeFilter = (value) => {
-    setQuery(value);
+  const handleChangeFilterQuery = (query) => {
+    callNews(DEFAULT_PAGE, query);
   };
 
   useEffect(() => {
-    getNews();
-  }, [pages, query]);
+    callNews(DEFAULT_PAGE, null);
+  }, []);
 
   return (
     <>
-      <section>
-        <select
-          name="select"
-          onChange={(e) => handleChangeFilter(e.target.value)}
-        >
-          <option value="angular">Angular</option>
-          <option value="vuejs">vuejs</option>
-          <option value="reactjs">React</option>
-        </select>
-      </section>
+      <select
+        className="dropdown"
+        name="select"
+        onChange={(e) => handleChangeFilterQuery(e.target.value)}
+      >
+        <option value="angular">Angular</option>
+        <option value="vuejs">vuejs</option>
+        <option value="reactjs">React</option>
+      </select>
 
       <section className="parent">
-        {newList.map((item) => (
-          <New
-            key={item.objectID}
-            author={"by " + item.author}
-            title={item.story_title}
-            date={item.created_at}
-          />
-        ))}
+        {(() => {
+          if (newList && newList.hits) {
+            return newList.hits.map((item) => (
+              <New
+                key={item.objectID}
+                author={"by " + item.author}
+                title={item.story_title}
+                date={item.created_at}
+              />
+            ));
+          }
+        })()}
       </section>
 
       <section className="pagination">
         <Pagination
-          count={totalPages}
+          count={newList.nbPages ? newList.nbPages : 0}
           color="primary"
-          onChange={handleChange}
+          onChange={handleChangePagination}
         />
       </section>
     </>

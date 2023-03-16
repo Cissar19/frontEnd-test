@@ -16,3 +16,39 @@
   justify-content: center;
   padding: 30px;
 }
+
+.dropdown {
+  width: 15rem;
+  height: 2rem;
+  margin: 1.938rem 7.125rem 1.063rem 8.775rem;
+  padding: 0.313rem 0.75rem 0.313rem 0.75rem;
+  border-radius: 4px;
+  border: solid 1px #2e2e2e;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .parent {
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagination {
+    width: 640px;
+    height: auto;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 0%;
+  }
+  .dropdown {
+    width: 15rem;
+    height: 2rem;
+    margin-left: 50px;
+    border-radius: 4px;
+    border: solid 1px #2e2e2e;
+    background-color: #fff;
+  }
+}

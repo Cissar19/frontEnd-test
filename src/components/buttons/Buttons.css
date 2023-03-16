@@ -22,3 +22,12 @@
   border: solid #d6d6d6;
   color: #1797ff;
 }
+@media (max-width: 768px) {
+  .buttonContainer {
+    width: 640px;
+    height: auto;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 0%;
+  }
+}

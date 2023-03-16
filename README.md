@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# About this proyect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made for a test on apply digital. In general lines, an API must be consumed and printed on the screen with some filters such as favorites, pagination and query. This project was made in reactjs.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+The project was created with the command "npx create react app". To start the project, you must use the "npm i" command to install the node modules and then with the "npm start" command start the project on localhost. Generally the project starts on port 3000 unless another project is already running. if so, it will run in another port.
 
-### `npm start`
+## Project Organization
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is organized into components. This is why inside the src folder you will find the components folder.In this folder (components) are all the components that will be rendered in App.jsx.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The main components are News.jsx and NewsListContainer.jsx
 
-### `npm test`
+## About the components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Buttons.jsx:
+-There are the buttons that refer to favorites and all the news
 
-### `npm run build`
+-Header.jsx:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -In this component there is only the header of the web page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-NewsListContainer:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    -The request to the API is made through Fetch with Asynchrony, specifically Async and await. At the same time, a status hook is used to correctly handle the filling of the news array that will later be iterated with a map.
 
-### `npm run eject`
+    -You can also find a select, this has the function of making the dropdown menu for the user.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    -A map was made to iterate an array containing the news hits. The New.jsx component is called to send through props the destructuring of the object stored in the NewList array.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    -The MaterialUI library was installed to apply the pagination.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-New.js:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    -This component does nothing more than print on the screen the props that were sent from the NewsListContainer.jsx component.
 
-## Learn More
+    -The time Ago library is applied to meet the requirement. This is applied in the prop that corresponds to the date of the new.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    -Once the properties are received, they are printed on the screen
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Hooks in the components
 
-### Code Splitting
+The react hooks used in this project were: useState, useEffect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Hook functionalities
 
-### Analyzing the Bundle Size
+The functionalities of these hooks were used for:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The state hook, useState was used mostly in the NewsListContainer component because it was important to update the state of a variable. For example, it was used in the pages variable. So that when the user clicks on the pagination. Doing this will change the value of the page variable, located in the url. This generated that a new request was made to the api but from another page.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The useEffect component was used to respect The Component Lifecycle, since if it was not done. It would render infinitely, saturating the page and the api. That is to say that with this hook we control the life cycle of the call to the api.
