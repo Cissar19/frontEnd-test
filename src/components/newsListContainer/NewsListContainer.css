@@ -27,7 +27,7 @@
   background-color: #fff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1368px) {
   .parent {
     display: flex;
     flex-direction: column;

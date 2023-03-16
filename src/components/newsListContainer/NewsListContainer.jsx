@@ -1,5 +1,6 @@
 import { Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
+
 import New from "../new/New";
 import "./NewsListContainer.css";
 
@@ -47,6 +48,7 @@ export default function NewsListContainer() {
                 author={"by " + item.author}
                 title={item.story_title}
                 date={item.created_at}
+                url={item.story_url}
               />
             ));
           }
