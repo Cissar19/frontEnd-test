@@ -2,8 +2,6 @@ import React from "react";
 import "./New.css";
 import * as timeago from "timeago.js";
 import clock from "../../icons/clock.png";
-import heart from "../../icons/heartEmpty.png";
-import heartFull from "../../icons/heart.png";
 
 export default function New({ title, date, author, url }) {
   const handleAddFav = () => {
@@ -25,7 +23,6 @@ export default function New({ title, date, author, url }) {
       </a>
 
       <div className="card-right">
-        {/* <img className="heart-img" src={heart} alt="clock" /> */}
         <button onClick={handleAddFav}>FAVORITO</button>
       </div>
     </section>
