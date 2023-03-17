@@ -49,6 +49,7 @@ export default function NewsListContainer() {
                     author={"by " + item.author}
                     title={item.story_title}
                     date={item.created_at}
+                    keyID={item.objectID}
                   />
                 );
               }

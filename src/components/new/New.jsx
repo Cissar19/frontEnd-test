@@ -2,10 +2,29 @@ import React from "react";
 import "./New.css";
 import * as timeago from "timeago.js";
 import clock from "../../icons/clock.png";
+import heart from "../../icons/heart.png";
+import Swal from "sweetalert2";
 
-export default function New({ title, date, author, url }) {
+export default function New({ title, date, author, url, keyID }) {
   const handleAddFav = () => {
-    console.log(`Agregaste ${title} a favoritos`);
+    // localStorage.favorite = JSON.stringify({ title, date, author, url, keyID });
+    let favorite = localStorage.getItem("favorite");
+
+    if (!favorite) {
+      favorite = [{ title, date, author, url, keyID }];
+    } else {
+      favorite = JSON.parse(favorite);
+      favorite.push({ title, date, author, url, keyID });
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Agregada a Favoritos",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+
+    localStorage.setItem("favorite", JSON.stringify(favorite));
   };
 
   return (
@@ -23,7 +42,9 @@ export default function New({ title, date, author, url }) {
       </a>
 
       <div className="card-right">
-        <button onClick={handleAddFav}>FAVORITO</button>
+        <button onClick={handleAddFav}>
+          <img className="heart-img" src={heart} alt="" />
+        </button>
       </div>
     </section>
   );

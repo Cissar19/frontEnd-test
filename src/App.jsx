@@ -8,8 +8,8 @@ import NewsListContainer from "./components/newsListContainer/NewsListContainer"
 export default function App() {
   return (
     <>
+      <MainHeader />
       <BrowserRouter>
-        <MainHeader />
         <ButtonContainer />
         <Routes>
           <Route path="/" element={<NewsListContainer />} />
