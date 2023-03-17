@@ -2,7 +2,7 @@ import React from "react";
 import "./New.css";
 import * as timeago from "timeago.js";
 import clock from "../../icons/clock.png";
-import heart from "../../icons/heart.png";
+import heart from "../../icons/heartEmpty.png";
 import Swal from "sweetalert2";
 
 export default function New({ title, date, author, url, keyID }) {
