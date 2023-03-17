@@ -1,6 +1,5 @@
 import { Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
 import New from "../new/New";
 import "./NewsListContainer.css";
 
@@ -24,7 +23,7 @@ export default function NewsListContainer() {
   };
 
   useEffect(() => {
-    callNews(DEFAULT_PAGE, null);
+    callNews(DEFAULT_PAGE, "angular");
   }, []);
 
   return (
@@ -42,15 +41,18 @@ export default function NewsListContainer() {
       <section className="parent">
         {(() => {
           if (newList && newList.hits) {
-            return newList.hits.map((item) => (
-              <New
-                key={item.objectID}
-                author={"by " + item.author}
-                title={item.story_title}
-                date={item.created_at}
-                url={item.story_url}
-              />
-            ));
+            return newList.hits.map((item) => {
+              if (item.story_title) {
+                return (
+                  <New
+                    key={item.objectID}
+                    author={"by " + item.author}
+                    title={item.story_title}
+                    date={item.created_at}
+                  />
+                );
+              }
+            });
           }
         })()}
       </section>
